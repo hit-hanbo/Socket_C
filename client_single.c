@@ -22,7 +22,7 @@ int main(void) {
 
     sock_handler = socket(AF_INET, SOCK_STREAM, 0);
     if (sock_handler == -1) {
-        printf("Error when init socket: %d\n", errno);
+        printf("[SYSTEM] Error when init socket: %d\n", errno);
         exit(-1);
     }
 
@@ -34,12 +34,12 @@ int main(void) {
     ret = connect(sock_handler, (struct sockaddr*) &addr_remote, sizeof(struct sockaddr));
     if(ret == -1)
     {
-        printf("Connect Failed: %d\n", errno);
+        printf("[SYSTEM] Connect Failed: %d\n", errno);
         exit(-1);
     }
     else
     {
-        printf("Connect Established: %s : %d\n", SRV_IP, SRV_PORT);
+        printf("[SYSTEM] Connect Established: %s : %d\n", SRV_IP, SRV_PORT);
     }
     while(1)
     {
